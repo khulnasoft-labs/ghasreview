@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.11.4
 
 ARG user=python
 ARG home=/home/$user
