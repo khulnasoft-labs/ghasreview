@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+flask = "*"
+flask-githubapp = "*"
+ghapi = "*"
+gunicorn = "*"
+
+[dev-packages]
+black = "==21.12b0"
+
+[requires]
+python_version = "3.10"
+
+[scripts]
+main = "python -m ghasreview --debug"
+fmt = "python -m black ."
+lint = "python -m black --check ."
+# Run flask app
+develop = "gunicorn ghasreview.app:app --bind 0.0.0.0:9000 --log-level=debug --workers=4"
+production = "gunicorn wsgi:app --bind 0.0.0.0:9000 --workers=4"
