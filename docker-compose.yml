@@ -2,7 +2,7 @@ version: "3.2"
 
 services:
   ghasreview:
-    image: ghcr.io/khulnasoft-labs/ghasreview:main
+    image: ghcr.io/khulnasoft-lab/ghasreview:main
     container_name: ghasreview
     env_file: .env
     ports:
